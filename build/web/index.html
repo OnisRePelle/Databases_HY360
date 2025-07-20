@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HY360</title>
+    
+    <!-- comment <link rel="stylesheet" href="css/style.css"> -->
+
+
+    <script src="js/ajax.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+</head>
+
+
+<body>
+    <div id="shit"> 
+
+        <button onclick="initDB()">Initialize Database</button>
+        <button onclick="deleteDB()">Delete Database</button>
+        <div id="ajaxContent">
+
+        </div> 
+    </div>
+            
+
+    <form id ="register_user_form" onsubmit="">
+        <div class="header_holder"><h1>Register User</h1></div>
+
+        <label for="Username" >Username:</label>
+            <input type="text" id="Username" name="Username" required>
+            <label for="Password" >Password:</label>
+            <input type="password" id="Password" name="Password" required>
+
+        <div>
+            <label for="Firstname" >First Name:</label>
+            <input type="text" id="Firstname" name="Firstname" required>
+            <label for="Lastname" >Last Name:</label>
+            <input type="text" id="Lastname" name="Lastname" required>
+        </div>
+
+        <div>
+            <label for="Email" >Email:</label>
+            <input type="email" id="Email" name="Email" required>
+        </div>
+        <br>
+        <div>
+            <label for="Number" >Card Number:</label>
+            <input type="text" id="Number" name="Number" required>
+            <label for="Expiredate" >Expire Date:</label>
+            <input type="date" id="Expiredate" name="Expiredate" required>
+            <label for="Securitycode" >Security Code (CVV):</label>
+            <input type="text" id="Securitycode" name="Securitycode" required>
+            
+        </div>
+        <br> 
+        <button type="submit">Register</button>
+        <br>
+        <!-- div to be used for holding the server's response after submission -->
+        <div id="anwser_register_user"></div>  
+    </form>
+
+    <br>
+
+    <form id="regigster_event_form" onsubmit="">
+        <h1>Register Event</h1>
+        <div>
+            <label for="Name" >Event Name:</label>
+            <input type="text" id="Name" name="Name" required>
+        </div>
+
+        <div>
+            <label for="Date" >Date:</label>
+            <input type="date" id="Date" name="Date" required>
+            <label for="Time" >Time:</label>
+            <input type="time" id="Time" name="Time" required>
+        </div>
+
+        <div>
+            <label for="Type" >Type:</label>
+            <input type="text" id="Type" name="Type" required>
+            <label for="Capacity" >Capacity:</label>
+            <input type="number" id="Capacity" name="Capacity" required>
+           
+        </div>
+
+        <div>
+            <label for="VipN" >VipN Number:</label>
+            <input type="text" id="VipN" name="VipN" required>
+            <label for="NormalN" >NormalN Number:</label>
+            <input type="text" id="NormalN" name="NormalN" required>
+        </div>
+
+        <div>
+            <label for="VipP" >VipP Number:</label>
+            <input type="text" id="VipP" name="VipP" required>
+            <label for="NormalP" >NormalP Number:</label>
+            <input type="text" id="NormalP" name="NormalP" required>
+        </div>
+        <br>
+        <button type="submit">Submit</button>
+        
+        <!-- div to be used for holding the server's response after submission -->
+        <div id="answer_register_event">
+        </div>
+
+    </form>
+
+    <br>
+
+    <form id="user_login_form" onsubmit="loginPOST(); return false">
+        <h1>User Login</h1>
+        <div>
+            <label for="loginUsername" >Username:</label>
+            <input type="text" id="loginUsername" name="Username" required>
+            <label for="loginPassoword">Password:</label>
+            <input type="password" id="loginPassoword" name="Password" required>
+            <button type="submit">Login</button>
+        </div>
+        <!-- div to be used for holding the server's response after submission -->
+        <div id="answer_login">
+
+        </div>
+        <button onclick="logoutPOST(); return false" > Logout </button>
+    </form>
+
+    <br>
+
+    <form id="Event_form">
+        <h1>Event <button style="margin-left: 100px;" onclick="GetAvailableTickets(); return false">See Events</button></h1>
+        <!-- div to be used for holding the server's response after submission -->
+        <div id="answer_events_holder">
+            
+        </div>
+    </form>
+
+    <br>
+
+    <form id="book_tickets_form" onsubmit="reservationPOST(); return false">
+        <h1>Book Tickets</h1>
+        <div>
+            <label for="EventName" >Event:</label>
+            <input type="text" id="EventName" name="EventName" required>
+            <label for="Number" >Ticket Number:</label>
+            <input type="text" id="Bnumber" name="Bnumber" required>
+            <label for="Btype" >Ticket Type:</label>
+            <select name="Btype" id="Btype">
+                <option value="VIP">VIP</option>
+                <option value="NORMAL">Normal</option>
+            </select>
+            <label for="cusid" >Customer Id:</label>
+            <input type="text" id="cusid" name="cusid" required>
+            
+            <button type="submit" >Book</button>
+        </div>
+        <br>
+        <!-- div to be used for holding the server's response after submission -->
+        <div id="answer_ticket_holder">
+
+        </div>
+    </form>
+
+</body>
+
+</html>

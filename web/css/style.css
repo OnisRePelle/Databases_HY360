@@ -1,0 +1,32 @@
+html   { font-family: Calibri;
+         background-color: cadetblue;}
+
+h1 { padding-left: 10px; }
+
+.header_holder { text-align: center;}
+
+form, #contractAdmin, #contractTeaching, #permanentAdmin, #permanentTeaching
+       { display: table;
+         background-color: white;
+         border-radius: 10px;
+         border: 2px solid black;
+         padding: 10px;}
+
+div    { display: table-row; }
+
+label  { display: table-cell;
+         padding-left: 10px;
+         padding-bottom: 10px; 
+        }
+
+input  { margin-left: 15px;}
+
+button { margin-left: 10px; }
+
+#paymentsub { margin-right: -100px}
+
+shit{
+    background-color: blue;
+    height:10px;
+    
+}
